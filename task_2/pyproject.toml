@@ -1,0 +1,20 @@
+[project]
+name = "task-2"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Gariknik",email = "nikitenkoivi@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "requests (>=2.32.5,<3.0.0)",
+    "pymongo (>=4.15.3,<5.0.0)",
+    "beautifulsoup4 (>=4.14.2,<5.0.0)",
+    "lxml (>=6.0.2,<7.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
