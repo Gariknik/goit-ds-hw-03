@@ -1,13 +1,18 @@
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 from modules import create_sample_cats, read_all_cats, read_cat_by_name, update_cat_age, add_cat_feature, delete_cat_by_name, delete_all_cats, display_menu, close_connection
+import os
+from dotenv import load_dotenv
+
 
 def main():
     """
     Головна функція програми
     """
+    load_dotenv()
+    CONN = os.getenv("CONN")
     client = MongoClient(
-        "mongodb+srv://goitlearn:gsxe1Y5DB8LDo0q7@cluster0.3jjni7d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+        CONN,
         server_api=ServerApi('1')
     )
 

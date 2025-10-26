@@ -2,14 +2,18 @@ from spiders import get_data_quotes, get_data_authors
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 import json
+import os
+from dotenv import load_dotenv
 
 
 def main():
     """
     Головна функція програми
     """
+    load_dotenv()
+    CONN = os.getenv("CONN")
     client = MongoClient(
-        "mongodb+srv://goitlearn:gsxe1Y5DB8LDo0q7@cluster0.3jjni7d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+        CONN,
         server_api=ServerApi('1')
     )
 
